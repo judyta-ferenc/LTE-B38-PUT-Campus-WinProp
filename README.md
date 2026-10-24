@@ -20,7 +20,7 @@ The project also tries to answer three questions:
 
 ### 2. Field Measurement Results
 
-LTE signal measurements were taken at 15 locations near base station BT33378 on October 19, 2026, between 09:52 and 10:23, using a smartphone with the NetMonster app. The phone received LTE Band 38 signals from three cells operating at two carrier frequencies: **2585 MHz** and **2604.8 MHz**.
+LTE signal measurements were taken at 14 locations near base station BT33378 on October 19, 2026, between 09:52 and 10:23, using a smartphone with the NetMonster app. The phone received LTE Band 38 signals from three cells operating at two carrier frequencies: **2585 MHz** and **2604.8 MHz**. The measurements included RSSI, RSRP, RSRQ, SNR, GPS coordinates and cell information.
 
 The following cells were identified:
 
@@ -30,46 +30,66 @@ The following cells were identified:
 | B38 | 233378 | 3 | 59744771 | 180 | 38098 | 2604.8 MHz |
 | B38 | 233378 | 4 | 59744772 | 364 | 38098 | 2604.8 MHz |
 
-The measurement data are saved in `arkusz.csv` and `measurement_points.gpkg` for analysis in QGIS and comparison with WinProp results.
+The measured values and corresponding WinProp simulation results for SISO, MIMO 2×2 and MIMO 4×4 are saved in Measurements_vs_Simulation.xlc.
 
 
 ### 3. Urban Database Preparation and Preprocessing in WallMan
 
-The urban model was created in **WallMan** from OpenStreetMap vector data (`map.osm`) and converted into a WinProp urban database (`map.odb`) containing buildings, vegetation and other physical obstacles affecting radio wave propagation. To improve the simulation workflow in ProMan, the environment was preprocessed using **Intelligent Ray Tracing (IRT)**.
+The urban environment was prepared in **WallMan** using OpenStreetMap data (`map.osm`). The imported data were converted into a WinProp urban database (`map.odb`) representing buildings and the surrounding environment. The database was then preprocessed using **Intelligent Ray Tracing (IRT)** to generate the `map.oib` file and improve propagation simulation efficiency in ProMan.
 
+### 4. Simulation Configuration in ProMan
 
-### 4. ProMan Network Planning Project
+The LTE network was configured in **Altair WinProp ProMan** using the following parameters.
 
-A new network planning project was created in **ProMan** using the preprocessed urban database (`map.oib`).
+#### Air Interface and Network Settings
 
-Key simulation parameters:
-* **Technology:** 4G LTE
-* **Band:** LTE Band 38 (2600 MHz)
-* **Duplex:** TDD
-* **Carrier frequencies:** 2585 MHz and 2604.8 MHz
-* **Channel bandwidth:** 20 MHz per carrier
-* **MIMO:** SISO, MIMO 2×2, and MIMO 4×4
-* **Prediction height:** 1.5 m
-* **Prediction resolution:** 1 m
+- **Technology:** 4G LTE
+- **Multiple access:** OFDM / SOFDMA
+- **Band:** LTE Band 38 (2600 MHz)
+- **Duplex:** TDD
+- **Carrier frequencies:** 2585 MHz and 2604.8 MHz
+- **Channel bandwidth:** 20 MHz per carrier
+- **Cell assignment:** Highest Rx power of all carriers in the network
+- **Minimum required SNIR:** -5.4 dB
 
-### 5. Base Station Configuration
+#### Propagation and Simulation Settings
 
-Base station BT33378 was configured in **ProMan** using antenna parameters from SI2PEM, such as azimuth, height, and downtilt. The `WiMax_2500MHz_60deg.apb` antenna pattern was used as an approximate model for the 2600 MHz band.
+- **Propagation model:** Intelligent Ray Tracing (IRT)
+- **Prediction height:** 1.5 m
+- **Prediction resolution:** 1 m
 
-The simulation included two antenna sectors with the following parameters:
+### 5. Base Station and Antenna Configuration
+
+Base station BT33378 was configured in **ProMan** using antenna parameters from SI2PEM, including azimuth, height, and downtilt.
+
+#### Antenna Sectors
+
+The simulation included two antenna sectors:
 
 | Sector | Azimuth | Downtilt | Antenna height |
 |---|---:|---:|---:|
 | Sector 1 | 315° | 3.5° | 40 m |
 | Sector 2 | 58° | 2.5° | 40 m |
 
-#### General Antenna Settings
+#### Antenna Parameters
 
-* **Antenna pattern:** `WiMax_2500MHz_60deg.apb`
-* **Polarization:** Linear +45° (SISO), ±45° (MIMO)
-* **Antenna gain:** 17 dBi
-* **MIMO configurations:** SISO, MIMO 2×2, MIMO 4×4
-* **Max. Tx Power:** 50 dBm (SISO), 47 dBm (MIMO 2×2), and 44 dBm (MIMO 4×4) EIRP per antenna element, to keep the same total EIRP for all configurations.
+- **Antenna pattern:** `WiMax_2500MHz_60deg.apb`
+- **Antenna gain:** 17 dBi
+- **Polarization:** Linear +45° (SISO), ±45° (MIMO)
+
+The antenna pattern was used as an approximate model for the 2600 MHz band.
+
+#### MIMO Configuration
+
+Three configurations were simulated to compare network performance, with the EIRP per antenna element adjusted to maintain approximately the same total EIRP across all configurations.
+
+| Configuration | EIRP per antenna element |
+|---|---:|
+| SISO | 50 dBm |
+| MIMO 2×2 | 47 dBm |
+| MIMO 4×4 | 44 dBm |
+
+For MIMO, ideal separation of spatial streams (no inter-stream interference) was assumed.
 
 
 ### 6. Simulation Results - Variant A: SISO
