@@ -94,3 +94,9 @@ For MIMO, ideal separation of spatial streams (no inter-stream interference) was
 
 ### 6. Simulation Results - Variant A: SISO
 
+The simulation results were compared with field measurements at the same geographical locations. However, the measured and simulated values do not necessarily correspond to the same serving cell or carrier frequency. The comparison focuses on differences between predicted and measured signal parameters at each location, rather than a direct validation of individual LTE cells.
+
+#### 6.1. Cell Area Assignment
+
+The Cell Area map shows the coverage of individual cells predicted by WinProp. Cells were assigned based on the highest received power among all carriers. Although the simulation included 2585 MHz and 2604.8 MHz, only 2585 MHz cells appeared in the resulting map.
+
