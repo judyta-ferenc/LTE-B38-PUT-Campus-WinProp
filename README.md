@@ -102,7 +102,7 @@ The cell area maps are very similar across all three configurations. The MIMO va
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
-| ![SISO Cell Area](images/SISO_CELL_AREA.png) | ![MIMO 2x2 Cell Area](images/MIMO2X2_CELL_AREA.png) | ![MIMO 4x4 Cell Area](images/MIMO4X4_CELL_AREA.png) |
+| ![SISO Cell Area](maps/SISO_CELL_AREA.png) | ![MIMO 2x2 Cell Area](maps/MIMO2X2_CELL_AREA.png) | ![MIMO 4x4 Cell Area](maps/MIMO4X4_CELL_AREA.png) |
 
 ### 6.2. Reference Signal Received Power (RSRP)
 
@@ -112,7 +112,7 @@ All three maps show a similar signal distribution. SISO has the highest RSRP val
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
-| ![SISO RSRP](images/SISO_RSRP.png) | ![MIMO 2x2 RSRP](images/MIMO2X2_RSRP.png) | ![MIMO 4x4 RSRP](images/MIMO4X4_RSRP.png) |
+| ![SISO RSRP](maps/SISO_RSRP.png) | ![MIMO 2x2 RSRP](maps/MIMO2X2_RSRP.png) | ![MIMO 4x4 RSRP](maps/MIMO4X4_RSRP.png) |
 
 #### Comparison with Field Measurements
 
@@ -128,7 +128,7 @@ The RSSI maps show almost the same signal distribution as RSRP.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
-| ![SISO RSSI](images/SISO_RSSI.png) | ![MIMO 2x2 RSSI](images/MIMO2X2_RSSI.png) | ![MIMO 4x4 RSSI](images/MIMO4X4_RSSI.png) |
+| ![SISO RSSI](maps/SISO_RSSI.png) | ![MIMO 2x2 RSSI](maps/MIMO2X2_RSSI.png) | ![MIMO 4x4 RSSI](maps/MIMO4X4_RSSI.png) |
 
 #### Comparison with Field Measurements
 
@@ -148,7 +148,7 @@ All three maps show lower RSRQ values near the boundary between the two sectors.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
-| ![SISO RSRQ](images/SISO_RSRQ.png) | ![MIMO 2x2 RSRQ](images/MIMO2X2_RSRQ.png) | ![MIMO 4x4 RSRQ](images/MIMO4X4_RSRQ.png) |
+| ![SISO RSRQ](maps/SISO_RSRQ.png) | ![MIMO 2x2 RSRQ](maps/MIMO2X2_RSRQ.png) | ![MIMO 4x4 RSRQ](maps/MIMO4X4_RSRQ.png) |
 
 #### Comparison with Field Measurements
 
@@ -164,7 +164,7 @@ MIMO 4×4 achieved the highest downlink throughput, reaching approximately 226 M
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
-| ![SISO Downlink Throughput](images/SISO_DL_MAX_TPUT.png) | ![MIMO 2x2 Downlink Throughput](images/MIMO2X2_DL_MAX_TPUT.png) | ![MIMO 4x4 Downlink Throughput](images/MIMO4X4_DL_MAX_TPUT.png) |
+| ![SISO Downlink Throughput](maps/SISO_DL_MAX_TPUT.png) | ![MIMO 2x2 Downlink Throughput](maps/MIMO2X2_DL_MAX_TPUT.png) | ![MIMO 4x4 Downlink Throughput](maps/MIMO4X4_DL_MAX_TPUT.png) |
 
 ### 6.6. Maximum Uplink Throughput
 
@@ -174,7 +174,7 @@ The results show a similar trend to downlink. MIMO 4×4 achieved the highest upl
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
-| ![SISO Uplink Throughput](images/SISO_UL_MAX_TPUT.png) | ![MIMO 2x2 Uplink Throughput](images/MIMO2X2_UL_MAX_TPUT.png) | ![MIMO 4x4 Uplink Throughput](images/MIMO4X4_UL_MAX_TPUT.png) |
+| ![SISO Uplink Throughput](maps/SISO_UL_MAX_TPUT.png) | ![MIMO 2x2 Uplink Throughput](maps/MIMO2X2_UL_MAX_TPUT.png) | ![MIMO 4x4 Uplink Throughput](maps/MIMO4X4_UL_MAX_TPUT.png) |
 
 ## 7. Conclusions
 
