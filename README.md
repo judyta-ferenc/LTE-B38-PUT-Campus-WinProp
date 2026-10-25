@@ -5,9 +5,9 @@ The aim of this project was to compare LTE Band 38 (2600 MHz) radio coverage and
 The project also tries to answer three questions:
 
 1. How well do WinProp simulations match real LTE measurements despite model simplifications?
-2. How does MIMO affect network performance, and which configuration gives results closest to real measurements?
-3. How does calibration using real-world measurements affect the simulation results?
-
+2. How does MIMO affect network performance?
+3. How do antenna direction and downtilt affect signal coverage?
+   
 ### 1. Input Data Sources
 * **OpenStreetMap** - map and urban area data used to prepare the simulation environment.
 * **BTSearch** - map used to locate base station BT33378.
@@ -114,7 +114,7 @@ RSRP measures the average power of LTE reference signals received from a specifi
 
 All three maps show a similar signal distribution. SISO has the highest RSRP values, while MIMO 4×4 has the lowest, which may be caused by different EIRP values. As expected, the weakest signal appears in the south, where neither antenna sector is directed. Interestingly, the signal can be stronger farther from the base station than directly below the antennas. This is probably due to the antenna radiation pattern and downtilt.
 
-The measured RSRP values are marked on the maps. They are generally close to the simulated values, with no major differences.
+The measured RSRP values are marked on the maps. They are generally within a similar range to the simulated values.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
@@ -125,7 +125,7 @@ The measured RSRP values are marked on the maps. They are generally close to the
 
 RSSI measures the total received power, including the useful signal, interference, and noise. It is expressed in dBm. Higher values indicate greater received power, but not necessarily better signal quality.
 
-The RSSI maps show almost the same signal distribution as RSRP, with similar differences between SISO, MIMO 2×2, and MIMO 4×4. The measured RSSI values are also shown on the maps.
+The RSSI maps show almost the same signal distribution as RSRP. The measured RSRP values are shown on the maps. Their range is similar to the simulated values.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
@@ -152,3 +152,18 @@ MIMO 4×4 achieved the highest downlink throughput, reaching approximately 226 M
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
 | ![SISO Downlink Throughput](images/SISO_DL_MAX_TPUT.png) | ![MIMO 2x2 Downlink Throughput](images/MIMO2X2_DL_MAX_TPUT.png) | ![MIMO 4x4 Downlink Throughput](images/MIMO4X4_DL_MAX_TPUT.png) |
+
+
+### 7. Conclusions
+
+**1. How well do WinProp simulations match real LTE measurements despite model simplifications?**
+
+A direct comparison is not fully reliable because the measurements and simulations do not always use the same cells and frequencies. If we ignore this limitation and compare all 14 points, SISO shows the smallest differences for RSRP, RSSI, and RSRQ, while MIMO 4×4 shows the largest. All three configurations tend to underestimate the measured values.
+
+**2. How does MIMO affect network performance?**
+
+MIMO significantly improves downlink throughput and, of course, uplink throughput as well. The differences in reference signal power between configurations may be mainly caused by changes in EIRP rather than MIMO itself.
+
+**3. Does the cell assignment method used in the simulation match the one used in the studied network?**
+
+The cell assignment results do not fully match the real measurements. WinProp selected cells operating at 2585 MHz, while only 3 out of 14 measurement points used this frequency. This suggests that the cell assignment method used in the simulation may not reflect the actual network behavior.
