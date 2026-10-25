@@ -34,7 +34,7 @@ The measured values and corresponding WinProp simulation results for SISO, MIMO 
 
 ## 3. Urban Database Preparation and Preprocessing in WallMan
 
-The urban environment was prepared in **WallMan** using OpenStreetMap data (`map.osm`). The imported data were converted into a WinProp urban database (`map.odb`) representing buildings and the surrounding environment. The database was then preprocessed using **Intelligent Ray Tracing (IRT)** to generate the `map.oib` file and improve propagation simulation efficiency in ProMan.
+The urban environment was prepared in **WallMan** using OpenStreetMap data (`map.osm`). The imported data were converted into a WinProp urban database (`map.odb`) representing buildings and the surrounding environment. The database was then preprocessed using **Intelligent Ray Tracing (IRT)** to generate the [`map.oib`](https://github.com/judyta-ferenc/LTE-B38-PUT-Campus-WinProp/releases/download/v1.0/map_oib.rar) file and improve propagation simulation efficiency in ProMan.
 
 ## 4. Simulation Configuration in ProMan
 
