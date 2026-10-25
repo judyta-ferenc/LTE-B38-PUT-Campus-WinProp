@@ -126,7 +126,9 @@ RSSI measures the total received power, including the useful signal, interferenc
 
 #### 6.4. Reference Signal Received Quality (RSRQ)
 
-RSRQ measures the quality of received LTE reference signals. It depends on signal strength, interference, and noise. The measured RSRQ values are marked at the measurement locations.
+RSRQ measures LTE signal quality by comparing the received reference signal power (RSRP) with the total received power (RSSI). Higher RSRQ values indicate better signal quality. The measured RSRQ values are marked at the measurement locations.
+
+All three configurations show lower RSRQ values near the boundary between the two sectors. However, SISO shows the largest areas with higher RSRQ values. In MIMO 2×2 and especially MIMO 4×4, areas with lower RSRQ become more visible, particularly near buildings and other obstacles.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
@@ -134,7 +136,9 @@ RSRQ measures the quality of received LTE reference signals. It depends on signa
 
 #### 6.5. Maximum Downlink Throughput
 
-Maximum Downlink Throughput shows the highest possible data rate from the base station to the user. It depends on signal quality and network configuration. One of the original LTE design targets, defined by 3GPP, was to achieve peak data rates of around 100 Mb/s in downlink and 50 Mb/s in uplink.
+Maximum Downlink Throughput shows the highest possible data rate from the base station to the user. One of the original LTE design targets, defined by 3GPP, was to achieve peak data rates of around 100 Mb/s in downlink and 50 Mb/s in uplink.
+
+MIMO 4×4 achieved the highest downlink throughput, reaching approximately 226 Mb/s. In comparison, SISO reached only 62 Mb/s. As expected, this difference is mainly due to the use of multiple spatial streams in MIMO, which allows more data to be transmitted simultaneously.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
