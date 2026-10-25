@@ -30,11 +30,11 @@ The following cells were identified:
 | B38 | 233378 | 3 | 59744771 | 180 | 38098 | 2604.8 MHz |
 | B38 | 233378 | 4 | 59744772 | 364 | 38098 | 2604.8 MHz |
 
-The measured values and corresponding WinProp simulation results for SISO, MIMO 2×2 and MIMO 4×4 are saved in `Measurements_vs_Simulation.xlsx`.
+The measured values and corresponding WinProp simulation results for SISO, MIMO 2×2 and MIMO 4×4 are saved in [`Measurements_vs_Simulation.xlsx`](data/Measurements_vs_Simulation.xlsx).
 
 ## 3. Urban Database Preparation and Preprocessing in WallMan
 
-The urban environment was prepared in **WallMan** using OpenStreetMap data (`map.osm`). The imported data were converted into a WinProp urban database (`map.odb`) representing buildings and the surrounding environment. The database was then preprocessed using **Intelligent Ray Tracing (IRT)** to generate the [`map.oib`](https://github.com/judyta-ferenc/LTE-B38-PUT-Campus-WinProp/releases/download/v1.0/map_oib.rar) file and improve propagation simulation efficiency in ProMan.
+The urban environment was prepared in **WallMan** using OpenStreetMap data ([`map.osm`](data/map.osm)). The imported data were converted into a WinProp urban database ([`map.odb`](map.odb)) representing buildings and the surrounding environment. The database was then preprocessed using **Intelligent Ray Tracing (IRT)** to generate the [`map.oib`](https://github.com/judyta-ferenc/LTE-B38-PUT-Campus-WinProp/releases/download/v1.0/map_oib.rar) file and improve propagation simulation efficiency in ProMan.
 
 ## 4. Simulation Configuration in ProMan
 
