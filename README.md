@@ -30,11 +30,11 @@ The following cells were identified:
 | B38 | 233378 | 3 | 59744771 | 180 | 38098 | 2604.8 MHz |
 | B38 | 233378 | 4 | 59744772 | 364 | 38098 | 2604.8 MHz |
 
-The measured values and corresponding WinProp simulation results for SISO, MIMO 2×2 and MIMO 4×4 are saved in [`Measurements_vs_Simulation.xlsx`](data/Measurements_vs_Simulation.xlsx).
+The measured values and corresponding WinProp simulation results for SISO, MIMO 2×2 and MIMO 4×4 are saved in [Measurements_vs_Simulation.xlsx](data/Measurements_vs_Simulation.xlsx).
 
 ## 3. Urban Database Preparation and Preprocessing in WallMan
 
-The urban environment was prepared in **WallMan** using OpenStreetMap data ([`map.osm`](data/map.osm)). The imported data were converted into a WinProp urban database ([`map.odb`](data/map.odb)) representing buildings and the surrounding environment. The database was then preprocessed using **Intelligent Ray Tracing (IRT)** to generate the [`map.oib`](https://github.com/judyta-ferenc/LTE-B38-PUT-Campus-WinProp/releases/download/v1.0/map_oib.rar) file and improve propagation simulation efficiency in ProMan.
+The urban environment was prepared in **WallMan** using OpenStreetMap data ([map.osm](data/map.osm)). The imported data were converted into a WinProp urban database ([map.odb](data/map.odb)) representing buildings and the surrounding environment. The database was then preprocessed using **Intelligent Ray Tracing (IRT)** to generate the [map.oib](https://github.com/judyta-ferenc/LTE-B38-PUT-Campus-WinProp/releases/download/v1.0/map_oib.rar) file and improve propagation simulation efficiency in ProMan.
 
 ## 4. Simulation Configuration in ProMan
 
@@ -144,7 +144,7 @@ As mentioned earlier, RSRQ is used to evaluate LTE signal quality. Higher values
 
 where N is the number of resource blocks in the measurement bandwidth. A 20 MHz LTE channel contains 100 resource blocks according to the 3GPP LTE standard, so N = 100 when the full channel bandwidth is used for the measurement.
 
-All three maps show lower RSRQ values near the boundary between the two sectors. SISO has the largest areas with higher RSRQ values. In MIMO 2×2 and MIMO 4×4, more areas have lower RSRQ values, mainly near buildings and other obstacles.
+RSRQ is difficult to simulate accurately because the real network load and interference are unknown. However, the maps still show useful differences. All of them show lower RSRQ near the boundary between the two sectors. SISO has larger areas with higher RSRQ, while MIMO 2×2 and MIMO 4×4 show more areas with lower RSRQ, especially near buildings and obstacles.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
@@ -189,3 +189,13 @@ MIMO 4×4 achieves the highest downlink and uplink throughput, while SISO provid
 ### 3. Which configuration (SISO, MIMO 2×2, or MIMO 4×4) gives results closest to real measurements?
 
 SISO gives the closest results to real measurements for RSRP, RSSI, and RSRQ, with the lowest Mean Absolute Error (MAE), which measures the average absolute difference between simulated and measured values.
+
+## 8. Antenna Model Verification and Simulation Limitations
+
+After completing the simulations, I found the technical specifications of the antenna used at the analyzed base station. The antenna model is **[Kathrein 80010651](data/kathrein_80010651_antenna_datasheet.pdf)**.
+
+The specifications confirmed that `WiMax_2500MHz_60deg.apb` was a good choice for the simulations. The model has a horizontal beamwidth of **60°**, compared to **67°** for the real antenna, making it the closest available model in WinProp. The simulated **±45° polarization** was also correct.
+
+However, one difference was found. The real antenna has a gain of **18.5 dBi at 0° tilt**, while **17 dBi** was used in the simulations. If transmit power is set as **Output PA**, antenna gain is added to it, which can affect RSRP. However, in this project, transmit power was set as **EIRP**, which already includes antenna gain. For this reason, the difference does not explain the lower simulated RSRP values.
+
+Regarding the **MIMO configuration**, the Kathrein 80010651 supports **MIMO 2×2** and can also be used for **SISO**. However, **MIMO 4×4** requires additional antenna elements, so the MIMO 4×4 simulation results can only be treated as a theoretical scenario rather than a representation of the installed antenna.
