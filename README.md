@@ -152,7 +152,7 @@ All three maps show lower RSRQ values near the boundary between the two sectors.
 
 #### Comparison with Field Measurements
 
-The RSRQ comparison shows that SISO gives the closest results to the measurements, although the differences between configurations are small.
+In this case, the measured RSRQ values again show large variations between locations, and the simulations once again underestimate RSRQ in most cases.
 
 ![RSRQ Comparison](charts/RSRQ_comparison.png)
 
