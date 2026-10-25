@@ -92,11 +92,11 @@ Three configurations were simulated to compare network performance, with the EIR
 For MIMO, ideal separation of spatial streams (no inter-stream interference) was assumed.
 
 
-### 6. Simulation Results - Variant A: SISO
+### 6. Simulation Results and Comparison
 
 The simulation results were compared with field measurements at the same locations. However, the measured and simulated values do not always come from the same cell or frequency.
 
-The simulation included 2585 MHz and 2604.8 MHz, but only 2585 MHz cells appeared in the Cell Area map. In contrast, only measurement points 1, 2, and 4 used 2585 MHz. The remaining points used 2604.8 MHz. For this reason, the comparison focuses on signal values at the same locations, rather than on matching the same LTE cells and carrier frequencies.
+The simulation included 2585 MHz and 2604.8 MHz, but only 2585 MHz cells appeared in the Cell Area maps. In contrast, only measurement points 1, 2, and 4 used 2585 MHz. The remaining points used 2604.8 MHz. For this reason, the comparison focuses on signal values at the same locations, rather than on matching the same LTE cells and carrier frequencies.
 
 #### 6.1. Cell Area Assignment
 
@@ -104,34 +104,38 @@ The Cell Area maps show the coverage of individual cells predicted by WinProp, b
 
 These maps are very similar across all three configurations. The MIMO variants, especially MIMO 4×4, show slightly smaller sector coverage areas and a few small gaps. However, the overall coverage pattern remains almost unchanged.
 
-![SISO Cell Area](images/SISO_CELL_AREA.png)
+| SISO | MIMO 2×2 | MIMO 4×4 |
+|:---:|:---:|:---:|
+| ![SISO Cell Area](images/SISO_CELL_AREA.png) | ![MIMO 2x2 Cell Area](images/MIMO2X2_CELL_AREA.png) | ![MIMO 4x4 Cell Area](images/MIMO4X4_CELL_AREA.png) |
 
 #### 6.2. Reference Signal Received Power (RSRP)
 
 RSRP measures the average received power of LTE reference signals transmitted by the base station. It is used to evaluate signal strength and network coverage. The measured RSRP values are marked at the measurement locations.
 
-![SISO RSRP](images/SISO_RSRP.png)
+| SISO | MIMO 2×2 | MIMO 4×4 |
+|:---:|:---:|:---:|
+| ![SISO RSRP](images/SISO_RSRP.png) | ![MIMO 2x2 RSRP](images/MIMO2X2_RSRP.png) | ![MIMO 4x4 RSRP](images/MIMO4X4_RSRP.png) |
 
+#### 6.3. Received Signal Strength Indicator (RSSI)
 
+RSSI measures the total received power, including the useful signal, interference, and noise. It is used to evaluate the overall received signal strength. The measured RSSI values are marked at the measurement locations.
 
-### 7. Simulation Results - Variant B: MIMO 2×2
+| SISO | MIMO 2×2 | MIMO 4×4 |
+|:---:|:---:|:---:|
+| ![SISO RSSI](images/SISO_RSSI.png) | ![MIMO 2x2 RSSI](images/MIMO2X2_RSSI.png) | ![MIMO 4x4 RSSI](images/MIMO4X4_RSSI.png) |
 
-#### 7.1. Cell Area Assignment
+#### 6.4. Reference Signal Received Quality (RSRQ)
 
-![MIMO 2x2 Cell Area](images/MIMO2X2_CELL_AREA.png)
+RSRQ measures the quality of received LTE reference signals. It depends on signal strength, interference, and noise. The measured RSRQ values are marked at the measurement locations.
 
-#### 7.2. Reference Signal Received Power (RSRP)
+| SISO | MIMO 2×2 | MIMO 4×4 |
+|:---:|:---:|:---:|
+| ![SISO RSRQ](images/SISO_RSRQ.png) | ![MIMO 2x2 RSRQ](images/MIMO2X2_RSRQ.png) | ![MIMO 4x4 RSRQ](images/MIMO4X4_RSRQ.png) |
 
-![MIMO 2x2 RSRP](images/MIMO2X2_RSRP.png)
+#### 6.5. Maximum Downlink Throughput
 
+Maximum Downlink Throughput shows the highest possible data rate from the base station to the user. It depends on signal quality and network configuration. One of the original LTE design targets, defined by 3GPP, was to achieve peak data rates of around 100 Mb/s in downlink and 50 Mb/s in uplink.
 
-
-### 8. Simulation Results - Variant C: MIMO 4×4
-
-#### 8.1. Cell Area Assignment
-
-![MIMO 4x4 Cell Area](images/MIMO4X4_CELL_AREA.png)
-
-#### 8.2. Reference Signal Received Power (RSRP)
-
-![MIMO 4x4 RSRP](images/MIMO4X4_RSRP.png)
+| SISO | MIMO 2×2 | MIMO 4×4 |
+|:---:|:---:|:---:|
+| ![SISO Downlink Throughput](images/SISO_DL_MAX_TPUT.png) | ![MIMO 2x2 Downlink Throughput](images/MIMO2X2_DL_MAX_TPUT.png) | ![MIMO 4x4 Downlink Throughput](images/MIMO4X4_DL_MAX_TPUT.png) |
