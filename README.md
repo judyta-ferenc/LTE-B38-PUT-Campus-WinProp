@@ -190,7 +190,7 @@ MIMO 4×4 achieves the highest downlink and uplink throughput, while SISO provid
 
 SISO gives the closest results to real measurements for RSRP, RSSI, and RSRQ, with the lowest Mean Absolute Error (MAE), which measures the average absolute difference between simulated and measured values.
 
-## 8. Antenna Model Verification and Simulation Limitations
+## 8. Antenna Model Verification
 
 After completing the simulations, I found the technical specifications of the antenna used at the analyzed base station. The antenna model is **[Kathrein 80010651](data/kathrein_80010651_antenna_datasheet.pdf)**.
 
