@@ -92,47 +92,56 @@ Three configurations were simulated to compare network performance, with the EIR
 For MIMO, ideal separation of spatial streams (no inter-stream interference) was assumed.
 
 
-### 6. Simulation Results and Comparison
+### 6. Simulation Results
 
-The simulation results were compared with field measurements at the same locations. However, the measured and simulated values do not always come from the same cell or frequency.
-
-The simulation included 2585 MHz and 2604.8 MHz, but only 2585 MHz cells appeared in the Cell Area maps. In contrast, only measurement points 1, 2, and 4 used 2585 MHz. The remaining points used 2604.8 MHz. For this reason, the comparison focuses on signal values at the same locations, rather than on matching the same LTE cells and carrier frequencies.
 
 #### 6.1. Cell Area Assignment
 
-The Cell Area maps show the coverage of individual cells predicted by WinProp, based on the highest received power among all carriers.
+The cell area maps show the coverage of individual cells predicted by WinProp, based on the highest received power among all carriers.
 
-These maps are very similar across all three configurations. The MIMO variants, especially MIMO 4×4, show slightly smaller sector coverage areas and a few small gaps. However, the overall coverage pattern remains almost unchanged.
+The simulation included 2585 MHz and 2604.8 MHz, but only 2585 MHz cells appeared in the cell area maps. In contrast, only measurement points 1, 2, and 4 used 2585 MHz. As a result, the comparison does not always involve the same LTE cells or carrier frequencies, which limits its accuracy.
+
+The cell area maps are very similar across all three configurations. The MIMO variants, especially MIMO 4×4, show slightly smaller coverage areas and a few small gaps. However, the overall coverage remains almost the same. The base station and 14 measurement points with their IDs are marked on the maps below.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
 | ![SISO Cell Area](images/SISO_CELL_AREA.png) | ![MIMO 2x2 Cell Area](images/MIMO2X2_CELL_AREA.png) | ![MIMO 4x4 Cell Area](images/MIMO4X4_CELL_AREA.png) |
 
+
 #### 6.2. Reference Signal Received Power (RSRP)
 
-RSRP measures the average received power of LTE reference signals transmitted by the base station. It is used to evaluate signal strength and network coverage. The measured RSRP values are marked at the measurement locations.
+RSRP measures the average power of LTE reference signals received from a specific cell. It is expressed in dBm and used to evaluate signal strength and coverage. Higher values indicate a stronger signal. RSRP depends mainly on distance, antenna direction, and obstacles.
+
+All three maps show a similar signal distribution. SISO has the highest RSRP values, while MIMO 4×4 has the lowest, which may be caused by different EIRP values. As expected, the weakest signal appears in the south, where neither antenna sector is directed. Interestingly, the signal can be stronger farther from the base station than directly below the antennas. This is probably due to the antenna radiation pattern and downtilt.
+
+The measured RSRP values are marked on the maps. They are generally close to the simulated values, with no major differences.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
 | ![SISO RSRP](images/SISO_RSRP.png) | ![MIMO 2x2 RSRP](images/MIMO2X2_RSRP.png) | ![MIMO 4x4 RSRP](images/MIMO4X4_RSRP.png) |
 
+
 #### 6.3. Received Signal Strength Indicator (RSSI)
 
-RSSI measures the total received power, including the useful signal, interference, and noise. It is used to evaluate the overall received signal strength. The measured RSSI values are marked at the measurement locations.
+RSSI measures the total received power, including the useful signal, interference, and noise. It is expressed in dBm. Higher values indicate greater received power, but not necessarily better signal quality.
+
+The RSSI maps show almost the same signal distribution as RSRP, with similar differences between SISO, MIMO 2×2, and MIMO 4×4. The measured RSSI values are also shown on the maps.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
 | ![SISO RSSI](images/SISO_RSSI.png) | ![MIMO 2x2 RSSI](images/MIMO2X2_RSSI.png) | ![MIMO 4x4 RSSI](images/MIMO4X4_RSSI.png) |
 
+
 #### 6.4. Reference Signal Received Quality (RSRQ)
 
-RSRQ measures LTE signal quality by comparing the received reference signal power (RSRP) with the total received power (RSSI). Higher RSRQ values indicate better signal quality. The measured RSRQ values are marked at the measurement locations.
+RSRQ measures LTE signal quality by comparing the reference signal power (RSRP) with the total received power (RSSI). It is expressed in dB. Higher values indicate better signal quality.
 
-All three configurations show lower RSRQ values near the boundary between the two sectors. However, SISO shows the largest areas with higher RSRQ values. In MIMO 2×2 and especially MIMO 4×4, areas with lower RSRQ become more visible, particularly near buildings and other obstacles.
+All three maps show lower RSRQ values near the boundary between the two sectors. SISO has the largest areas with higher RSRQ values. In MIMO 2×2 and especially MIMO 4×4, lower values become more common, mainly near buildings and other obstacles. The measured RSRQ values are also shown on the maps.
 
 | SISO | MIMO 2×2 | MIMO 4×4 |
 |:---:|:---:|:---:|
 | ![SISO RSRQ](images/SISO_RSRQ.png) | ![MIMO 2x2 RSRQ](images/MIMO2X2_RSRQ.png) | ![MIMO 4x4 RSRQ](images/MIMO4X4_RSRQ.png) |
+
 
 #### 6.5. Maximum Downlink Throughput
 
